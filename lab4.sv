@@ -11,25 +11,6 @@ module lab4 #(parameter DW=8, AW=8, byte_count=2**AW, lfsr_bitwidth=5)(
 
    // TODO: declare the wires that are *outputs* of the control and datapath that are not
    // TODO: primary outputs module lab4.
-	//logic packetDone;
- 	//logic preambleDone;
-	//logic incomingByteValid;
-	//logic getNext;//////////////
-	//logic prelenen;
-	//logic tapsen;
-	//logic seedEn;
-	//logic loadLFSR;
-	//logic incReadAddr;
-	//logic lfsrEn;
-//	logic incByteCnt;
-//	logic payLoad;
-//	logic ValidIn;
-	//logic PlainByte;
-	//logic packetEnd;
-//	logic validOut;
-//	logic done;
-   //logic byteCount;
-	
 	 wire packetDone;
  	 wire preambleDone;
 	 wire incomingByteValid;
