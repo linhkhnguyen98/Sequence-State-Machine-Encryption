@@ -24,25 +24,6 @@ module lab4_dp #(parameter DW=8, AW=4, lfsr_bitwidth=5) (
 	input logic clk, // clock signal 
 	input logic rst           // reset
 	);
-	
-	//logic packetDone;
- 	//logic preambleDone;
-	//logic incomingByteValid;
-	 
-	//logic prelenen;
-	//logic tapsen;
-	//logic seedEn;
-	//logic loadLFSR;
-	//logic incReadAddr;
-	//logic lfsrEn;
-	//logic incByteCnt;
-	//logic payLoad;
-	//logic ValidIn;
-	//logic PlainByte;
-	//logic packetEnd;
-	//logic validOut;
-	//logic done;
-   //logic byteCount;
    
    //
    // ROM interface wires
@@ -93,10 +74,6 @@ module lab4_dp #(parameter DW=8, AW=4, lfsr_bitwidth=5) (
    // Your logic reads from this fifo.
    //
    logic [7:0] 		       fInPlainByte;  // data from the input fifo
-	//logic 						 fInValid; //valid output
-	//logic [7:0] 				 plainByte; //wrDat
-	//logic 						 validIn; // push
-	//logic							 getNext; //pop
  		       
    fifo fm (
 	    .rdDat(fInPlainByte),             // data from the FIFO
