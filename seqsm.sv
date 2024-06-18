@@ -4,33 +4,6 @@ module seqsm
     input logic clk,
     input logic rst,
 	 input logic encRqst,
-//	 input logic validIn, //03/13 added
-//	 input logic fifo_empty;
-//	 
-//	 input logic byteCntEqLen;
-//	 input logic preambleDone;
-//	 input logic byteCountFull;
-////	 input logic preamble_len;
-//	 output logic preamble_en;
-//	 
-//	 
-//	 input logic tapsDone;
-//	 output logic taps_en;
-//	 output logic tapsRst;
-//	 
-//	 input logic seedDone;
-//	 output logic seed_en;
-//	 output logic seedRst;
-//	 
-//	 input logic lfsrDone;
-//	 output logic lfsr_en;
-//	 output logic lfsrRst;
-//	 output logic load_LFSR;
-//	 
-//	 
-//	 output logic byteCount;
-//	 output logic done;
-
 	 input logic packetDone,
 	 input logic preambleDone, 
 	 input logic incomingByteValid,
@@ -118,21 +91,6 @@ typedef enum { Idle, LoadPreamble, LoadTaps, LoadSeed, InitLFSR,
 				end
 				
 				ProcessPreamble : begin
-//					if(!fifo_empty) begin
-//						if(!byteCntEqLen)
-//							byteCount = 1;
-//							lfsr_en = 1; 
-//							msb = 0;
-//							nxtState = ProcessPreamble;
-//						end else
-//							nxtState = Encrypt;
-//					end else
-//						nxtState = ProcessPreamble;
-					
-//					if(byteCntEqLen) begin
-//						nxtState = Encrypt;
-//					end else
-//						nxtState = ProcessPreamble;
 					if(incomingByteValid) begin
 						lfsrEn = 1;
 						incByteCnt = 1;
@@ -166,17 +124,6 @@ typedef enum { Idle, LoadPreamble, LoadTaps, LoadSeed, InitLFSR,
 				Done : begin
 					done = 1;
 					nxtState = Done;
-//					if(rst) begin
-//						nxtState = Idle;
-//					end else 
-//						nxtState = Done;
-						
-//					if(validIn) begin
-//						done = 1;
-////						validOut = 1;
-//						nxtState = Idle;
-//					end else
-//						nxtState = Done;
 				end
 				
 				default: nxtState = Idle;
